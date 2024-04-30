@@ -1,0 +1,31 @@
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int fun(int arr[],int l){
+    int ans[l]={0};
+    for(int i=0;i<l;i++){
+        ans[arr[i]-1] = 1;
+    }
+    for(int i=0;i<l;i++){
+        if(ans[i]==0){
+           return i+1;
+        }
+    }
+    return -1;
+}
+int main()
+{
+   int num;
+   
+   cin>>num;
+   int arr[num];
+   cout<<"Enter array ele";
+   for(int i=0;i<num;i++){
+       cin>>arr[i];
+   }
+   int miss=fun(arr,num);
+   cout<<"Missing element is" <<miss;
+   return 0;
+}
